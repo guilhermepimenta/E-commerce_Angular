@@ -24,14 +24,14 @@ export class CarrinhoComprasComponent implements OnInit {
     this.ngOnInit();
   }
 
-  adicionar(item: Produto): void {
-    this.carrinhoComprasService.adicionarQuantidadeItem(item);
-    this.ngOnInit();
-  }
+  // adicionar(item: Produto): void {
+  //   this.carrinhoComprasService.adicionarQuantidadeItem(item);
+  //   this.ngOnInit();
+  // }
 
-  remover(item: Produto): void {
-    this.carrinhoComprasService.diminuirQuantidadeItens(item);
-    this.ngOnInit();
-  }
+  // remover(item: Produto): void {
+  //   this.carrinhoComprasService.diminuirQuantidadeItens(item);
+  //   this.ngOnInit();
+  // }
 
 }

@@ -17,7 +17,7 @@ export class ProdutosComponent implements OnInit {
 
   itemProduto: Produto = {
     idProduto: 0, nome: '', preco: 0, quantidade: 0,
-    descricao: '', foto: ''
+    status: '', descricao: '', foto: ''
   };
 
 
@@ -34,6 +34,15 @@ export class ProdutosComponent implements OnInit {
   // handlePageChange(event: any): void {
   //   this.page = event;
   // }
+
+
+  produtoPago() {
+    console.log(this.itemProduto.status)
+    if (this.itemProduto.status = 'paga') {
+      return false
+    }
+    return true;
+  }
 
   obterProduto(item: Produto): void {
     this.itemProduto = item;

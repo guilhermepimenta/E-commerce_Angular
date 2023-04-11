@@ -1,7 +1,7 @@
-<h5>Meu carrinho de compras</h5>
+<!-- <h5>Meu carrinho</h5> -->
 
 <div *ngIf="dados.quantidadeItens == 0" class="alert alert-secondary">
-  <strong>Não há produtos em seu carrinho de compras</strong>
+  <strong>Não há produtos adicionados</strong>
 </div>
 
 <div class="card mb-3" *ngIf="dados.quantidadeItens > 0">
@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-6">
         <div>
-          Valor total do carrinho de compras:
+          Valor total:
           <strong>{{ dados.valorTotal | currency : "R$ " }}</strong>
         </div>
         <div>
@@ -19,10 +19,14 @@
       </div>
       <div class="col-md-6 text-end">
         <button class="btn btn-outline-danger" (click)="limpar()">
-          Limpar carrinho
+          Limpar
         </button>
         &nbsp;
-        <a [routerLink]="['/login']" class="btn btn-success">
+        <button class="btn btn-outline-primary" [routerLink]="['/produtos']">
+          Continuar comprando
+        </button>
+        &nbsp;
+        <a [routerLink]="['/finalizar-pedido']" class="btn btn-success">
           Finalizar Pedido
         </a>
       </div>
@@ -38,7 +42,7 @@
       <th>Preço</th>
       <th>Quantidade</th>
       <th>Total</th>
-      <th>Operações</th>
+      <!-- <th>Operações</th> -->
     </tr>
   </thead>
   <tbody>
@@ -50,18 +54,15 @@
       <td>{{ item.preco | currency : "R$ " }}</td>
       <td>{{ item.quantidade }}</td>
       <td>{{ item.total | currency : "R$ " }}</td>
-      <td>
+      <!-- <td>
         <button class="btn btn-outline-danger btn-sm" (click)="remover(item)">
           -
         </button>
         &nbsp;
-        <button
-          class="btn btn-outline-primary btn-sm"
-          (click)="adicionar(item)"
-        >
-          +
+        <button class="btn btn-outline-primary btn-sm" routerLink="">
+          Continuar comprando
         </button>
-      </td>
+      </td> -->
     </tr>
   </tbody>
   <tfoot>

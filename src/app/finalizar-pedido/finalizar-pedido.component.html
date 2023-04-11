@@ -5,8 +5,8 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Meu Carrinho de compras</h5>
-                <p class="card-text">Produtos adicionados no carrinho:</p>
+                <h5 class="card-title">Carrinho </h5>
+                <p class="card-text">Produtos adicionados:</p>
 
                 <table class="table table-sm table-bordered mt-3">
                     <thead>
@@ -43,10 +43,10 @@
 
     </div>
     <div class="col-md-5">
-        
-        <div class="card">
+
+        <!-- <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Dados do Cliente da Venda</h5>
+                <h5 class="card-title">Dados do Cliente</h5>
                 <p class="card-text">Resumo da venda:</p>
 
                 <table class="table table-sm table-bordered mt-3">
@@ -85,8 +85,82 @@
 
                 </div>
 
-            </div> 
-        </div>  
+            </div>
+        </div> -->
 
+        <form class="checkout">
+            <div class="checkout-header">
+                <h1 class="checkout-title">
+                    Cartão de Crédito
+                    <!-- <span class="checkout-price">{{dados.valorTotal | currency: 'R$ '}}</span> -->
+                </h1>
+            </div>
+            <p>
+                <!-- <label class="checkout-title">Digite o nome</label> -->
+                <input type="text" class="checkout-input checkout-card" placeholder="Digite o nome no cartão" autofocus>
+            </p>
+            <p>
+                <input type="text" class="checkout-input checkout-name" placeholder="4111 1111 1111 1111">
+                <input type="text" class="checkout-input checkout-cvc" placeholder="CVC">
+            </p>
+            <p>
+                <input type="text" class="checkout-input checkout-name" placeholder="MM/AA">
+            </p>
+            <p>
+                <select class="checkout-input checkout-card" placeholder="" name="" id="">
+                    <option value="">{{dados.valorTotal | currency: 'R$'}} a vista</option>
+                    <option value="">{{dados.valorTotal * 1.01 | currency: 'R$'}} em 2 vezes de {{dados.valorTotal *
+                        1.01 /
+                        2| currency: 'R$'}}</option>
+                    <option value="">{{dados.valorTotal * 1.02 | currency: 'R$'}} em 3 vezes de {{dados.valorTotal *
+                        1.02 /
+                        3| currency: 'R$'}}</option>
+                    <option value="">{{dados.valorTotal * 1.03 | currency: 'R$'}} em 4 vezes de {{dados.valorTotal *
+                        1.03 /
+                        4| currency: 'R$'}}</option>
+                    <option value="">{{dados.valorTotal * 1.04 | currency: 'R$'}} em 5 vezes de {{dados.valorTotal *
+                        1.04 /
+                        5| currency: 'R$'}}</option>
+                    <!-- <option value="">{{dados.valorTotal * 1.05 | currency: 'R$'}} em 6 vezes de {{dados.valorTotal *
+                        1.05 /
+                        6| currency: 'R$'}}</option>
+                    <option value="">{{dados.valorTotal * 1.06 | currency: 'R$'}} em 7 vezes de {{dados.valorTotal *
+                        1.06 /
+                        7| currency: 'R$'}}</option>
+                    <option value="">{{dados.valorTotal * 1.07 | currency: 'R$'}} em 8 vezes de {{dados.valorTotal *
+                        1.07 /
+                        8| currency: 'R$ '}}</option> -->
+
+                </select>
+            </p>
+            <!-- <p>
+                <input type="submit" value="Comprar" class="checkout-btn">
+            </p> -->
+            <div class="d-grid">
+                <button class="btn btn-success btn-lg mt-2" data-bs-toggle="modal" data-bs-target="#myModal">
+                    Comprar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <div class="icon-box">
+                    <i class="material-icons">&#xE876;</i>
+                </div>
+                <!-- <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button> -->
+            </div>
+            <div class="modal-body text-center">
+                <h4>Parabéns</h4>
+                <p>Compra realizada com sucesso.</p>
+                <button class="btn btn-success" data-bs-dismiss="modal" [routerLink]="['/']"><span>Clique para
+                        sair</span> <i class="material-icons">&#xE5C8;</i></button>
+            </div>
+        </div>
     </div>
 </div>
